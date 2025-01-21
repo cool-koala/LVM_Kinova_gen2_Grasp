@@ -34,13 +34,13 @@ from dashscope import Generation
 dashscope.api_key_file_path=r'C:\Users\guoxi\Desktop\代码\抓取机械臂\qwenapi.txt'
 
 # 鉴权参数
-ak = "SWN8Z0RODWQ81X5JNPPM"
-sk="0bRd1G94uJ2zatwWbJHonQBfzWbG8AD0UVBM0pRx"
-project_id = "572be8dd4dec4dea9eb451d7d15e6aca"     # project id 同region一一对应，参考https://support.huaweicloud.com/api-sis/sis_03_0008.html
+ak = ""
+sk=""
+project_id = ""     # project id 同region一一对应，参考https://support.huaweicloud.com/api-sis/sis_03_0008.html
 region = 'cn-east-3'         # region，如cn-north-4
 
-API_KEY = "pv8wL1hGuZA6IwhTw2O4YEVu"
-SECRET_KEY = "dB3qgaowGxnDXb2XpDukNUNv8T1ipAUn"
+API_KEY = ""
+SECRET_KEY = ""
 
 # 全局变量定义
 audio_playback_event = threading.Event()
