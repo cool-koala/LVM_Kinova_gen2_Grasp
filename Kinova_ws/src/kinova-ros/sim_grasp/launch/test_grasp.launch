@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- Realsense -->
+  <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
+    <arg name="tf_prefix"             value="camera"/>
+    <arg name="initial_reset"         value="false"/>
+    <arg name="enable_sync"           value="true"/>
+    <arg name="align_depth"           value="true"/>
+    <arg name="enable_pointcloud"     value="true"/>
+  </include>
+
+  <!-- grasp detection -->
+  <node pkg="sim_grasp" type="grasp_detect.py" name="grasp_detect" output="screen" />
+
+
+</launch>
