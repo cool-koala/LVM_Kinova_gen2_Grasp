@@ -15,8 +15,8 @@ from transformers import BlipProcessor, BlipForConditionalGeneration, logging
 from mmengine.config import Config
 #from googletrans import Translator
 from translate import Translator
-#openai.api_key = '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'
-openai.api_key = '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'#我自己的openai账号
+'
+openai.api_key = ''#我自己的openai账号
 
 
 # Grounding DINO
