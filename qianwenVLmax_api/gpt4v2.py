@@ -2,16 +2,16 @@
 import base64
 import requests
 import time
-# OpenAI API Key
-api_key = ""
+# OpenAI API Key - Replace with your actual API key
+api_key = "YOUR_OPENAI_API_KEY"
 
 # Function to encode the image
 def encode_image(image_path):
   with open(image_path, "rb") as image_file:
     return base64.b64encode(image_file.read()).decode('utf-8')
 
-# Path to your image
-image_path = r"C:\Users\admin\Documents\WPSDrive\1204242452_1\WPS云盘\抓取机械臂\arm_test10.jpg"  
+# Path to your image - Replace with your actual image path
+image_path = "path/to/your/image.jpg"  
 
 # Getting the base64 string
 base64_image = encode_image(image_path)

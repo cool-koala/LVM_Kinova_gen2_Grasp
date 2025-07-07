@@ -16,7 +16,7 @@ from mmengine.config import Config
 #from googletrans import Translator
 from translate import Translator
 '
-openai.api_key = ''#我自己的openai账号
+openai.api_key = 'YOUR_OPENAI_API_KEY'  # Replace with your OpenAI API key
 
 
 # Grounding DINO

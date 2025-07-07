@@ -31,16 +31,17 @@ from http import HTTPStatus
 import dashscope
 from dashscope import Generation
 
-dashscope.api_key_file_path=r'C:\Users\guoxi\Desktop\代码\抓取机械臂\qwenapi.txt'
+# Configure your API key file path here
+dashscope.api_key_file_path = 'path/to/your/qwenapi.txt'  # Replace with your actual path
 
-# 鉴权参数
-ak = ""
-sk=""
-project_id = ""     # project id 同region一一对应，参考https://support.huaweicloud.com/api-sis/sis_03_0008.html
-region = 'cn-east-3'         # region，如cn-north-4
+# Authentication parameters - Configure before use
+ak = "YOUR_HUAWEI_CLOUD_AK"  # Replace with your Huawei Cloud Access Key
+sk = "YOUR_HUAWEI_CLOUD_SK"  # Replace with your Huawei Cloud Secret Key
+project_id = "YOUR_PROJECT_ID"  # Replace with your project ID
+region = 'cn-east-3'  # Replace with your region
 
-API_KEY = ""
-SECRET_KEY = ""
+API_KEY = "YOUR_BAIDU_API_KEY"  # Replace with your Baidu API Key
+SECRET_KEY = "YOUR_BAIDU_SECRET_KEY"  # Replace with your Baidu Secret Key
 
 # 全局变量定义
 audio_playback_event = threading.Event()
@@ -152,7 +153,7 @@ async def prepare_audio(text, VOICE):
 async def LLMSPEACH(human_input, start_time, VOICE):
         #take a photo
     code = """import subprocess\nimport time\ngrasp_command = "rostopic pub -1 /Capture_picture std_msgs/String 'data: 'your''"\nprocess = subprocess.Popen(grasp_command, shell=True)"""
-    directory = r"\\192.168.31.23\Camera_capture"
+    directory = r"\\YOUR_NETWORK_IP\Camera_capture"  # Replace with your network storage IP
     filename = os.path.join(directory, "generated.py")
     if not os.path.exists(directory):
         os.makedirs(directory)
@@ -179,7 +180,7 @@ async def LLMSPEACH(human_input, start_time, VOICE):
         'user',
         'content': [
             {
-                'image': 'file:////192.168.31.23/Camera_capture/rgb.png'
+                'image': 'file:////YOUR_NETWORK_IP/Camera_capture/rgb.png'  # Replace with your network IP
             },
             {
                 'text': pre_prompt+human_input
@@ -235,7 +236,7 @@ async def LLMSPEACH(human_input, start_time, VOICE):
         text_queue.put("\目标位置获取失败，请重试")
         return None
     else:
-        directory = r"\\192.168.31.23\Camera_capture"
+        directory = r"\\YOUR_NETWORK_IP\Camera_capture"  # Replace with your network storage IP
         #directory = r"C:\Users\guoxi\Desktop\test"
         filename = os.path.join(directory, "box_destination.txt")
         text_queue.put("\n成功获取目标坐标，开始抓取")
@@ -245,7 +246,7 @@ async def LLMSPEACH(human_input, start_time, VOICE):
             for number in numbers:
                 file.write(str(int(number)) + '\n')
         code="""import subprocess\nimport time\ngrasp_command = "rostopic pub -1 /grasp/grasp_detect_run std_msgs/Int8 'data: 0'"\nprocess = subprocess.Popen(grasp_command, shell=True)"""
-        directory = r"\\192.168.31.23\Camera_capture"
+        directory = r"\\YOUR_NETWORK_IP\Camera_capture"  # Replace with your network storage IP
         filename = os.path.join(directory, "genzerated.py")
         if not os.path.exists(directory):
             os.makedirs(directory)

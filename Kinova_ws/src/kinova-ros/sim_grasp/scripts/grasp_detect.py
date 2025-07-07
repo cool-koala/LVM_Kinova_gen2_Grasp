@@ -311,7 +311,7 @@ def rgbCallback(data):
     global graspStateRGB       
     if graspStateRGB :
         img_rgb = bridge.imgmsg_to_cv2(data, "bgr8")  # (480, 640, 3)
-        cv2.imwrite('/home/guoxy/Camera_capture/rgb_before.png', img_rgb)
+        cv2.imwrite('/path/to/your/Camera_capture/rgb_before.png', img_rgb)
         ims_rgb.append(img_rgb)
         if len(ims_rgb) >= 10:
             ims_rgb.pop(0)
@@ -322,14 +322,14 @@ def rgb2Callback(data):
     global rgb2_flag 
     if rgb2_flag ==1:     
         img_rgb_2 = bridge.imgmsg_to_cv2(data, "bgr8")  # (480, 640, 3)
-        cv2.imwrite('/home/guoxy/Camera_capture/rgb.png', img_rgb_2)                          
+        cv2.imwrite('/path/to/your/Camera_capture/rgb.png', img_rgb_2)                          
         rgb2_flag = 0
 
 def depCallback(data):
     global graspStateD
     if graspStateD:
         img_dep = bridge.imgmsg_to_cv2(data, "16UC1")  # (480, 640)
-        cv2.imwrite('/home/guoxy/Camera_capture/depth.png', img_dep)
+        cv2.imwrite('/path/to/your/Camera_capture/depth.png', img_dep)
         ims_dep.append(img_dep)
         if len(ims_dep) >= 10:
             ims_dep.pop(0)
@@ -453,7 +453,7 @@ def runGraspCallback(data):
 
 
     # 截取中间区域
-    # with open('/home/guoxy/Camera_capture/box.txt', 'r') as file:
+    # with open('/path/to/your/Camera_capture/box.txt', 'r') as file:
     #     l, t, r, b = [int(float(line.strip())) for line in file]
     # size = 200  # 截取正方形的边长 (原始图像 H：480；W：640)
     # H, W = img_dep.shape
@@ -587,7 +587,7 @@ if __name__ == '__main__':
         print('device_name = ', device_name)
         device = torch.device(device_name)
         # SGDN模型路径
-        grasp_model = '/media/guoxy/3T/mojixue/kinova2_ws/src/kinova-ros/sim_grasp/scripts/ckpt/epoch_0064_acc_0.1957_.pth'
+        grasp_model = '/path/to/your/workspace/src/kinova-ros/sim_grasp/scripts/ckpt/epoch_0064_acc_0.1957_.pth'
         # 初始化抓取检测器
         sgdn = SGDN(grasp_model, device=device_name)
 

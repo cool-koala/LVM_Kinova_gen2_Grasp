@@ -1,0 +1,105 @@
+# LVM_Kinova_gen2_Grasp Environment Dependencies
+# LVM_Kinova_gen2_Grasp 环境依赖
+
+# ============= ROS Dependencies =============
+# ROS Melodic/Noetic (Ubuntu 18.04/20.04)
+# kinova-ros
+# realsense-ros
+# Standard ROS packages: geometry_msgs, sensor_msgs, std_msgs, etc.
+
+# ============= Python Core Dependencies =============
+# Python 3.6+
+numpy>=1.19.0
+opencv-python>=4.5.0
+scipy>=1.5.0
+matplotlib>=3.3.0
+scikit-image>=0.17.0
+Pillow>=8.0.0
+
+# ============= Deep Learning Dependencies =============
+torch>=1.7.0
+torchvision>=0.8.0
+# Note: PyTorch version should match your CUDA version if using GPU
+
+# ============= Computer Vision Dependencies =============
+# OpenCV is included above
+# cv_bridge (ROS package)
+
+# ============= Audio Processing Dependencies =============
+sounddevice>=0.4.0
+pygame>=2.0.0
+edge-tts>=6.0.0
+
+# ============= GUI Dependencies =============
+tkinter  # Usually included with Python
+# For Ubuntu: sudo apt-get install python3-tk
+
+# ============= Vision-Language Model Dependencies =============
+dashscope>=1.10.0  # Alibaba Qwen API
+requests>=2.25.0
+json  # Built-in Python module
+
+# ============= Huawei Cloud Speech Dependencies =============
+# huaweicloud-sis (custom package included in project)
+websocket-client>=1.0.0
+
+# ============= File Monitoring Dependencies =============
+watchdog>=2.0.0  # For python_script_monitor.py
+
+# ============= Utility Dependencies =============
+threading  # Built-in Python module
+queue  # Built-in Python module
+time  # Built-in Python module
+os  # Built-in Python module
+re  # Built-in Python module
+math  # Built-in Python module
+subprocess  # Built-in Python module
+tempfile  # Built-in Python module
+io  # Built-in Python module
+asyncio  # Built-in Python module
+base64  # Built-in Python module
+
+# ============= Robotics Dependencies =============
+# Eigen3 (C++ library for robot control)
+# Transform libraries (included in ROS)
+
+# ============= System Dependencies (apt-get install) =============
+# ros-melodic-desktop-full or ros-noetic-desktop-full
+# ros-melodic-realsense2-camera or ros-noetic-realsense2-camera
+# ros-melodic-kinova-msgs or ros-noetic-kinova-msgs
+# librealsense2-dev
+# python3-rospy
+# python3-cv-bridge
+# python3-tk
+# build-essential
+# cmake
+# git
+
+# ============= Hardware Dependencies =============
+# Intel RealSense D435/D455 camera
+# Kinova Gen2 j2s6s200 robot arm
+# USB connection for robot arm
+# Network connection for shared storage
+
+# ============= Network Dependencies =============
+# Shared network storage (SMB/CIFS) for image capture
+# Configure IP address in code based on your network setup
+
+# ============= API Keys and Configuration =============
+# Alibaba Cloud Dashscope API key (for Qwen-VL-Max)
+# Huawei Cloud API credentials (AK/SK)
+# Configure in respective config files
+
+# ============= Optional Dependencies =============
+# CUDA toolkit (for GPU acceleration)
+# cuDNN (for GPU acceleration)
+# For better performance with neural networks
+
+# ============= Installation Notes =============
+# 1. Install ROS first: http://wiki.ros.org/melodic/Installation
+# 2. Install Python dependencies: pip install -r requirements.txt
+# 3. Install system dependencies with apt-get
+# 4. Configure hardware connections
+# 5. Set up API keys and network configuration
+# 6. Calibrate camera-robot transformation
+# 7. Test individual components before running full system
